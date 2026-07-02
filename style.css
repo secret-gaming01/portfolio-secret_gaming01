@@ -1,3 +1,86 @@
+/* --- BOUTON HAMBURGER --- */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 10000; /* ⭐ toujours au-dessus */
+}
+
+.menu-btn .bar {
+    width: 100%;
+    height: 4px;
+    background: black;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    transform-origin: center;
+}
+
+/* --- ANIMATION X PARFAITE --- */
+.menu-btn.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* --- IMAGE DE FOND DERRIÈRE TOUT --- */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* ⭐ IMPORTANT */
+}
+
+/* --- MENU DÉROULANT --- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.4s ease;
+    z-index: 9999;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu a {
+    font-size: 26px;
+    font-weight: bold;
+    padding-left: 25px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.side-menu a:hover {
+    color: #007bff;
+    transform: translateX(10px);
+}
+
 .background-image {
     position: fixed;     
     top: 0;
@@ -69,39 +152,3 @@ header {
     margin-bottom: 30px;
 }
 
-/* --- BOUTON HAMBURGER --- */
-.menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-/* Barres du hamburger */
-.menu-btn .bar {
-    width: 100%;
-    height: 4px;
-    background: black;
-    border-radius: 4px;
-    transition: 0.3s ease;
-    transform-origin: center; /* ⭐ pivot parfait */
-}
-
-/* --- ANIMATION X PARFAITE --- */
-.menu-btn.open .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-btn.open .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-btn.open .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
