@@ -1,10 +1,107 @@
-body.Accueil {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8D5FdYlATC5uko--7Xf1UqP_rRmcgbyt7AugbPMrkIqUX2qjFTSvskVI&s=10");
-} 
-body.contact {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8D5FdYlATC5uko--7Xf1UqP_rRmcgbyt7AugbPMrkIqUX2qjFTSvskVI&s=10");
-} 
+.background-image {
+    position: fixed;     
+    top: 0;
+    left: 0;
 
-body.projets {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb8D5FdYlATC5uko--7Xf1UqP_rRmcgbyt7AugbPMrkIqUX2qjFTSvskVI&s=10");
-} 
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+    z-index: -1;        
+}
+
+header, h1 {
+    position: relative;  
+    z-index: 1;
+}
+
+h1 {
+    font-size: 48px;      
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;  
+        margin-top: 20px;
+    }
+}
+
+p {
+    font-size: 22px;       
+    line-height: 1.6;
+    color: black;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;       
+}
+
+
+@media (max-width: 600px) {
+    p {
+        font-size: 18px;   
+        margin: 15px;
+    }
+}
+
+header a {
+    font-size: 24px;        
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 600px) {
+    header a {
+        font-size: 20px;   
+        margin: 0 10px;
+    }
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* --- BOUTON HAMBURGER --- */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Barres du hamburger */
+.menu-btn .bar {
+    width: 100%;
+    height: 4px;
+    background: black;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    transform-origin: center; /* ⭐ pivot parfait */
+}
+
+/* --- ANIMATION X PARFAITE --- */
+.menu-btn.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-btn.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
